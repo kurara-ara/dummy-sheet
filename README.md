@@ -1,2 +1,2 @@
 # Owlbear Rodeo Generic Character Sheet
-A generic character sheet builder.
+A simple character sheet extension for Owlbear Rodeo.
