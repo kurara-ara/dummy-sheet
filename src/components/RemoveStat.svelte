@@ -4,15 +4,16 @@
 
     export let stat;
 
-    function onRemove() {
-        dispatch('remove', stat);
+    function onRemoveStat() {
+        dispatch('removeStat', stat);
     }
 </script>
 
-<button on:click={onRemove}>&times;</button>
+<button on:click={onRemoveStat}>&times;</button>
 
 <style lang="scss">
     button {
+        box-sizing: border-box;
         color: rgba(var(--accent), 0.25);
         background:transparent;
         border:none;

@@ -1,37 +1,21 @@
 <script lang="ts">
-    import { editing } from "../stores";
-    
-    $: newSectionId = sections.length > 0 ? Math.max(...sections.map(t => t.id)) + 1 : 1
+    //Import stores
+    import { editing } from '../stores'
 
-    function addSection(){
-        sections = [...sections, 
-        { 
-            id: newSectionId, 
-            name: "New Section", 
-            stats: [
-                {
-                    id: 1,
-                    name: "New Field",
-                    value: "-"
-                }
-            ]
-        }]
+    function toggleEditing(){
+        $editing = !$editing;
     }
-
-    export let sections;
 </script>
 
 {#if $editing}
-
-<button on:click={addSection} on:keydown={addSection}>
- Add Section
-</button>
+<button style="font-style:italic;" on:click={toggleEditing}>Editing&hellip;</button>
+{:else}
+<button on:click={toggleEditing}>Edit</button>
 {/if}
 
 <style lang="scss">
     button {
         float: right;
-        margin: 0 1rem; 
         background: rgba(var(--accent),0);
         border: 1px solid rgb(var(--accent));
         border-radius: 0.15rem;

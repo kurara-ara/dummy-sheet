@@ -1,6 +1,10 @@
 <script lang="ts">
+    // Import stores
     import { editing } from "../stores";
+
+    // Import components
     import RemoveStat from "./RemoveStat.svelte";
+    import AddStat from "./AddStat.svelte"
 
     $: newStatId = stats.length > 0 ? Math.max(...stats.map(t => t.id)) + 1 : 1
 
@@ -33,17 +37,16 @@
         <td contenteditable="true" bind:innerHTML={stat.value}></td>
 
         {#if $editing}
-        <td style="width:0.5rem;"><RemoveStat bind:stat={stat} on:remove={e => removeStat(e.detail)}/></td>
+        <td style="width:0.5rem;"><RemoveStat bind:stat={stat} on:removeStat={e => removeStat(e.detail)}/></td>
         {/if}
     </tr>
     {/each}
 </table>
-
 {#if $editing}
-<div class="buttons">
-    <button on:click={addStat}>Add Row</button>
-</div>
+<AddStat on:addStat={addStat}/>
 {/if}
+
+
 
 <style lang="scss">
     table {
@@ -65,24 +68,5 @@
         &:hover {
             color: rgba(var(--primary), 1);
         }
-    }
-    button {
-        background: rgba(var(--accent), 0.25);
-        border:none;
-        text-align: center;
-        vertical-align: middle;
-        text-transform: uppercase;
-        font-size: 1    rem;
-        color:rgba(var(--secondary), 1);
-        cursor: pointer;
-        transition: background ease-in-out 150ms;
-        &:hover {
-            background: rgba(var(--accent), 1);
-            
-        }
-    }
-    div.buttons {
-        padding: 0.5rem 0;
-        float: right;
     }
 </style> 

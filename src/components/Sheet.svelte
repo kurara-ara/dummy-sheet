@@ -1,36 +1,61 @@
 <script>
     // Import components
-    import Section from './Section.svelte'
-    import AddSection from "./AddSection.svelte";
+    import Sections from './Sections.svelte'
+    import SheetActions from './SheetActions.svelte';
 
     // Import stores
     import { editing } from '../stores'
-
-    // Export
+    
+    // Exports
     export let sheet;
+    
+    function toggleEditing(){ 
+      $editing = !$editing;
+    }
 
     function removeSection(section){
         sheet.sections = sheet.sections.filter(t => t.id !== section.id)
     }
+
 </script>
 
 <div>
-    {#each sheet.sections as section (section.id)}
-        <Section bind:section={section}/>
-    {/each}
     {#if $editing}
-    <AddSection bind:sections={sheet.sections}/>
+    <h1 bind:innerHTML={sheet.name} contenteditable="true"></h1>
+    {:else}
+    <h1>{sheet.name}</h1>
     {/if}
+    <h4>{sheet.player}</h4>
+    <SheetActions/>
+    <Sections bind:sections={sheet.sections}/>
 </div>
 
 <style lang="scss">
     div {
-        width:75%;
-        margin:0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 1rem;
-        grid-row-gap: 2rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1 {
+        margin: 1rem 0 0 1rem;
+        color:rgb(var(--accent));
+        text-align: right;
+    }
+    h4 {
+        font-weight:300;
+        margin:0;
+        color:rgb(var(--accent));
+        text-align: right;
+    }
+    @media only screen and (min-width: 33.75em) {
+        div {
+            width: 80%;
+        }
+    }
+    @media only screen and (min-width: 60em) { /* 960px */
+        div {
+            width: 75%;
+            max-width: 60rem;
+        }
     }
 </style>
