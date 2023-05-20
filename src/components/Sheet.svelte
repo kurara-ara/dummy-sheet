@@ -8,6 +8,10 @@
 
     // Export
     export let sheet;
+
+    function removeSection(section){
+        sheet.sections = sheet.sections.filter(t => t.id !== section.id)
+    }
 </script>
 
 <div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+    
     // Import components
     import Stats from './Stats.svelte'
     import { editing } from '../stores';
