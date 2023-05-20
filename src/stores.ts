@@ -39,9 +39,9 @@ const initialTheme = {
     primary:        "255,255,255",
     secondary:      "42,42,42",
     accent:         "255,213,140",
-    textShadow:     "1px 1px 4px #000000"
+    textShadow:     "1px 1px 2px #000000"
 }
 
-export const editing = writable(true);
+export const editing = writable(false);
 export const sheet = localStore('dummy-sheet', initialSheet)
 export const theme = localStore('dummy-sheet-theme', initialTheme)
