@@ -5,7 +5,7 @@ const initialSheet = {
     id:         1,
     name:       "Example Sheet",
     player:     "Player 1",
-    notes:      "",
+    notes:      "Welcome to the Dummy Sheet for little dummies.<div>That's what I'm calling it.</div><div>It doesn't roll, or calculate, or do anything else.</div><div>It has little fields and sections that you can put things in.</div><div>GMs can look at their players' sheets with the little binder tabs, build templates, and distribute them as they wish.</div><div>To get started, just start editing things.</div><div>If you can't edit them, just hit the edit button.</div><div>Pretty much everything is editable. Except the player name. </div><div>That one's special. Not for any reason, really, but I want it to be.</div><div>Everything saves to your browser store as soon as you change it.</div><div>If that's not persistent enough for you, then feel free to export the file. You can import it later.</div><div>Lastly, there's a theme menu, for people who arent fans of #2A2A2A or #FFD58C.</div>",
     sections:  [
         {
             id:     1,

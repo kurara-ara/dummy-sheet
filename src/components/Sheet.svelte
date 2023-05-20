@@ -2,6 +2,7 @@
     // Import components
     import Sections from './Sections.svelte'
     import SheetActions from './SheetActions.svelte';
+    import Notes from './Notes.svelte';
 
     // Import stores
     import { editing } from '../stores'
@@ -28,6 +29,7 @@
     <h4>{sheet.player}</h4>
     <SheetActions/>
     <Sections bind:sections={sheet.sections}/>
+    <Notes bind:notes={sheet.notes}/>
 </div>
 
 <style lang="scss">

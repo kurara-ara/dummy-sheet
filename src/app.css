@@ -9,3 +9,17 @@ body{
   margin:0;
   background: #2A2A2A;
 }
+pre::-webkit-scrollbar {
+  width: 0.2rem;               /* width of the entire scrollbar */
+}
+
+pre::-webkit-scrollbar-track {
+  background: rgba(var(--accent), 0.3);        /* color of the tracking area */
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--accent));
+  border: 0.1rem solid rgb(var(--accent));
+  border-radius: 100%;
+  width: 0.1rem;
+}
