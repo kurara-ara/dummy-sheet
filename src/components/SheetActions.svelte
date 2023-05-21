@@ -17,7 +17,8 @@
 <style lang="scss">
     div {
         margin-top: 1rem;
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         grid-gap: 0.5rem;
         grid-auto-flow: column;
         width: 100%;
