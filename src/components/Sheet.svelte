@@ -37,6 +37,8 @@
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     h1 {
         margin: 1rem 0 0 1rem;

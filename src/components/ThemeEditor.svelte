@@ -24,6 +24,7 @@
         rgb.forEach(function(c){
             c = parseInt(c);
             c = c.toString(16)
+            c = c.length === 1 ? '0' + c : c
             hex = hex + c.toString();
         });
         return hex;
@@ -46,7 +47,7 @@
 <input type="checkbox" name="shadow" bind:checked={shadowChecked} on:input={updateShadow}/>
 {/if}
 
-<style>
+<style lang="scss">
     input[type="color"] {
         border: none;
         background: none;
@@ -56,10 +57,14 @@
     }
     input[type="checkbox"] {
         border: none;
-        background: none;
+        background: var(--secondary);
         height:1.5rem;
         width: 1.5rem;
         cursor:pointer;
+        &:checked {
+            background:var(--accent);
+        }
     }
+    
 
 </style>

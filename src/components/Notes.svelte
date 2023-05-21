@@ -20,6 +20,7 @@
         max-height: 15rem;
     }
     div {
+        margin-bottom:2rem;
         padding: 1rem 0.5rem;
         border-width: 0.15rem;
         border-style: solid;

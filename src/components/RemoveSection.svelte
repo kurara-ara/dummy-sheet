@@ -17,6 +17,7 @@
 
 <style lang="scss">
     button {
+        margin-top: 0.25rem;
         box-sizing: border-box;
         width: 100%;
         background: rgba(var(--accent),0);

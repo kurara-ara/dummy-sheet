@@ -6,8 +6,10 @@ pre {
   font-family: monospace;
 }
 body{
-  margin:0;
-  background: #2A2A2A;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
 }
 pre::-webkit-scrollbar {
   width: 0.2rem;               /* width of the entire scrollbar */
