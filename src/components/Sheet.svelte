@@ -1,8 +1,14 @@
-<script>
+<script lang="ts">
     // Import components
+    import { onMount } from 'svelte'
     import Sections from './Sections.svelte'
     import SheetActions from './SheetActions.svelte';
     import Notes from './Notes.svelte';
+    import OBR from '@owlbear-rodeo/sdk';
+
+    onMount(async () => {
+        sheet.player = await OBR.player.getName();
+    });
 
     // Import stores
     import { editing } from '../stores'

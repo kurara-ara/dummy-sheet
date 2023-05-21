@@ -1,0 +1,12 @@
+{
+    "name": "DummySheet",
+    "version": "0.7.1",
+    "manifest_version": 1,
+    "action": {
+      "title": "DummySheet",
+      "icon": "/icon.svg",
+      "popover": "/",
+      "height": 800,
+      "width": 600
+    }
+  }

@@ -37,6 +37,7 @@
     h2 {
         text-shadow: var(--shadow);
         color: rgb(var(--accent));
+        font-size: 1.2rem;
         margin-top:0;
         margin-bottom:0;
     }

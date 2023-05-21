@@ -33,5 +33,6 @@
         color: rgb(var(--accent));
         margin-top:0;
         margin-bottom:0;
+        font-size: 1.2rem;
     }
 </style>
