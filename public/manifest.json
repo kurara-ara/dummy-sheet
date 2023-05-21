@@ -2,6 +2,8 @@
     "name": "DummySheet",
     "version": "0.7.1",
     "manifest_version": 1,
+    "icon": "/icon.svg",
+    "author": "kurara ara",
     "action": {
       "title": "DummySheet",
       "icon": "/icon.svg",

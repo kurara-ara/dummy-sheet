@@ -19,6 +19,7 @@
 <style lang="scss">
     div {
         margin-top: 1rem;
+        margin-bottom: 1rem;
         display: flex;
         flex-wrap: wrap;
         grid-gap: 0.5rem;

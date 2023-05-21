@@ -6,8 +6,10 @@
     import Notes from './Notes.svelte';
     import OBR from '@owlbear-rodeo/sdk';
 
+    let player = ""
+
     onMount(async () => {
-        sheet.player = await OBR.player.getName();
+        player = await OBR.player.getName();
     });
 
     // Import stores
@@ -32,7 +34,7 @@
     {:else}
     <h1>{sheet.name}</h1>
     {/if}
-    <h4>{sheet.player}</h4>
+    <h4>{player}</h4>
     <SheetActions/>
     <Sections bind:sections={sheet.sections}/>
     <Notes bind:notes={sheet.notes}/>
@@ -59,7 +61,7 @@
     }
     @media only screen and (min-width: 33.75em) {
         div {
-            width: 80%;
+            width: 85%;
         }
     }
     @media only screen and (min-width: 60em) { /* 960px */

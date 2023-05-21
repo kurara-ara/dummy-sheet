@@ -1,7 +1,7 @@
 ---
 title: DummySheet
 description: A dummy-simple character sheet for Owlbear Rodeo
-author: <your extension's title>
+author: kurara ara
 image: <your extension's hero image>
 icon: ./public/icon.svg
 tags:

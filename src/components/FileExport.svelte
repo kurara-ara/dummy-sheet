@@ -6,8 +6,7 @@
 
     function exportFile (){
         let dl = JSON.stringify($sheet);
-        let filename = "DummySheet-" + $sheet.player + "-" +  Date.now() + ".json"; 
-        console.log("Exporting!");
+        let filename = "DummySheet-" + $sheet.name + "-" +  Date.now() + ".json";
         var blob = new Blob([dl], {type: "application/json"});
         saveAs(blob, filename);
     }
@@ -22,7 +21,7 @@
         border: 1px solid rgb(var(--accent));
         border-radius: 0.15rem;
         color: rgb(var(--accent));
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 300;
         text-transform: uppercase;
         cursor: pointer;
