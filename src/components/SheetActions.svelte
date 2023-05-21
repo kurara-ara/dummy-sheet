@@ -6,9 +6,11 @@
 
     // Import stores
     import { sheet } from '../stores'
+    import FileManager from "./FileManager.svelte";
 </script>
 
 <div>
+    <FileManager/>
     <ThemeEditor/>
     <AddSection bind:sections={$sheet.sections}/>
     <EditToggle/>
