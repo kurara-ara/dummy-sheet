@@ -15,16 +15,18 @@
         let r = (rgb & 0xff0000) >> 16;
         let g = (rgb & 0x00ff00) >> 8;
 	    let b = (rgb & 0x0000ff) >> 0;
-        console.log(r + "," + g + "," + b);
         $theme[name] = r + "," + g + "," + b;
     }
     
     function rgbToHex(rgb) {
-        var rgb = rgb.split( ',' ) ;
-        rgb[0]=parseInt( rgb[0] ).toString(16) ; // skip rgb(
-        rgb[1]=parseInt( rgb[1] ).toString(16) ; // this is just g
-        rgb[2]=parseInt( rgb[2] ).toString(16) ; // parseInt scraps trailing )
-        return '#' + rgb.join('');
+        var rgb = rgb.split( ',' );
+        let hex = "#";
+        rgb.forEach(function(c){
+            c = parseInt(c);
+            c = c.toString(16)
+            hex = hex + c.toString();
+        });
+        return hex;
     }
 
     function updateShadow() {

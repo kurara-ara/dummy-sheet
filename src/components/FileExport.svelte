@@ -1,6 +1,15 @@
 <script lang="ts">
+    import { saveAs } from 'file-saver';
+
+    import { sheet } from '../stores'
+
+
     function exportFile (){
-        console.log("Exporting!")
+        let dl = JSON.stringify($sheet);
+        let filename = "DummySheet-" + $sheet.player + "-" +  Date.now() + ".json"; 
+        console.log("Exporting!");
+        var blob = new Blob([dl], {type: "application/json"});
+        saveAs(blob, filename);
     }
 </script>
 

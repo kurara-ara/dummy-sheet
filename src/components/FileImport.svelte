@@ -1,12 +1,29 @@
 <script lang="ts">
+    // Import store
+    import { sheet } from '../stores'
+
+    export let saveFile: FileList | undefined;
+
     function importFile (){
-        console.log("Importing!")
+        document.getElementById('importFile').click();
+    }
+    function storeFile(e){
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            let jsonObj = JSON.parse(e.target.result.toString());
+            $sheet = jsonObj;
+        }
+        reader.readAsText(e.target.files[0]);
     }
 </script>
 
+<input id="importFile" type="file" accept="application/json" on:change={e => storeFile(e)} bind:value={saveFile}/>
 <button on:click={importFile}>Import</button>
 
 <style lang="scss">
+    input[type="file"] {
+        display:none;
+    }
     button {
         float: right;
         background: rgba(var(--accent),0);
