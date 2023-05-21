@@ -15,6 +15,7 @@
 
 <style lang="scss">
     button {
+        margin-right: 0px;
         float: right;
         background: rgba(var(--accent),0);
         border: 1px solid rgb(var(--accent));
