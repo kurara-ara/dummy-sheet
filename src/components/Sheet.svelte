@@ -8,10 +8,6 @@
 
     let player = ""
 
-    onMount(async () => {
-        player = await OBR.player.getName();
-    });
-
     // Import stores
     import { editing } from '../stores'
     
@@ -30,7 +26,7 @@
 
 <div>
     {#if $editing}
-    <h1 bind:innerHTML={sheet.name} contenteditable="true"></h1>
+    <h1 bind:innerText={sheet.name} contenteditable="true"></h1>
     {:else}
     <h1>{sheet.name}</h1>
     {/if}

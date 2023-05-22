@@ -5,7 +5,7 @@
 
 <div>
     <h2>Notes</h2>
-    <pre bind:innerHTML={notes} contenteditable="true"></pre>
+    <pre bind:innerText={notes} contenteditable="true"></pre>
 </div>
 
 <style>
