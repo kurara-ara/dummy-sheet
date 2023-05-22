@@ -4,11 +4,13 @@
     "manifest_version": 1,
     "icon": "/icon.svg",
     "author": "kurara ara",
+    "description": "A dummy-simple customisable character sheet.",
+    "homepage_url": "https://www.dummysheet.com",
     "action": {
       "title": "DummySheet",
       "icon": "/icon.svg",
       "popover": "/",
-      "height": 800,
-      "width": 600
+      "height": 900,
+      "width": 700
     }
   }
