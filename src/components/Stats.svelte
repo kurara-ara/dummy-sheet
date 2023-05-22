@@ -30,11 +30,11 @@
     {#each stats as stat (stat.id)}
     <tr>
         {#if $editing}
-        <td contenteditable="true" bind:textContent={stat.name}></td>
+        <td contenteditable="true" bind:innerText={stat.name}></td>
         {:else}
         <td>{stat.name}</td>
         {/if}
-        <td contenteditable="true" bind:textContent={stat.value}></td>
+        <td contenteditable="true" bind:innerText={stat.value}></td>
 
         {#if $editing}
         <td style="width:0.5rem;"><RemoveStat bind:stat={stat} on:removeStat={e => removeStat(e.detail)}/></td>
