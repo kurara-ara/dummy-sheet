@@ -15,7 +15,7 @@
 <div>
     {#if $editing}
 
-    <h2 bind:innerHTML={section.name} contenteditable="true">{section.name}</h2>
+    <h2 bind:innerText={section.name} contenteditable="true">{section.name}</h2>
     {:else}
     <h2>{section.name}</h2>
     {/if}
