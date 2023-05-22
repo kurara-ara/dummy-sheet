@@ -1,3 +1,15 @@
+---
+title: DummySheet
+description: A dummy-simple character sheet for Owlbear Rodeo
+author: kurara ara
+image: https://www.dummysheet.com/hero.png
+icon: https://www.dummysheet.com/icon.svg
+tags:
+  - tool
+manifest: https://www.dummysheet.com/manifest.json
+learn-more: https://github.com/kurara-ara/dummy-sheet
+---
+
 # DummySheet
 
 A dummy-simple sheet for storing character data.
