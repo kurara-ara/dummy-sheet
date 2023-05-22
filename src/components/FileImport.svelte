@@ -2,7 +2,7 @@
     // Import store
     import { sheet } from '../stores'
 
-    export let saveFile: FileList | undefined;
+    let saveFile: FileList | undefined;
 
     function importFile (){
         document.getElementById('importFile').click();
