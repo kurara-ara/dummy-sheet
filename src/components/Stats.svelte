@@ -57,6 +57,7 @@
         background: rgba(var(--accent), 0.05);
     }
     td {
+        white-space: pre-wrap;
         text-shadow: var(--shadow);
         padding: 0 0.5rem;
         color: rgba(var(--primary), 0.85);
