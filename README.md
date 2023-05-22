@@ -6,7 +6,7 @@ image: <your extension's hero image>
 icon: ./public/icon.svg
 tags:
   - tool
-manifest: ./public/icon.svg
+manifest: ./manifest.json
 learn-more: kurara.ara@gmail.com
 ---
 
