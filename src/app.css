@@ -18,12 +18,12 @@ body{
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(var(--accent), 0.3);        /* color of the tracking area */
+  background: rgba(var(--accent), 0.2);        /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(var(--accent));
   border: 0.1rem solid rgb(var(--accent));
-  border-radius: 100%;
+  border-radius: 0.1rem;
   width: 0.1rem;
 }

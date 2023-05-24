@@ -1,12 +1,9 @@
 <script lang="ts">
     // Import components
-    import { onMount } from 'svelte'
     import Sections from './Sections.svelte'
     import SheetActions from './SheetActions.svelte';
     import Notes from './Notes.svelte';
-    import OBR from '@owlbear-rodeo/sdk';
-
-    let player = ""
+    let player = "";
 
     // Import stores
     import { editing } from '../stores'
@@ -26,7 +23,7 @@
 
 <div>
     {#if $editing}
-    <h1 bind:innerText={sheet.name} contenteditable="true"></h1>
+    <h1 bind:innerText={sheet.name} contenteditable="true"> </h1>
     {:else}
     <h1>{sheet.name}</h1>
     {/if}
