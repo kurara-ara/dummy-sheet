@@ -5,7 +5,6 @@
     export let section;
 
     function onRemoveSection() {
-        console.log(section);
         dispatch('removeSection', section);
     }
 

@@ -1,13 +1,23 @@
 <script lang="ts">
-    import { currentPlayerName, currentPlayerId, PartyStore } from '../services/OBRHelper';
+import { currentPlayerName, currentPlayerId, PartyStore, viewingPlayerId, ViewingSheet} from '../services/OBRHelper';
 
-    let activeTab = "active";
+function changeViewingSheet(playerId) {
+    $viewingPlayerId = playerId;
+}
 </script>
 
 <ul>
-    <li class="{activeTab}">{$currentPlayerName} &#9734;</li>
+    {#if $viewingPlayerId === $currentPlayerId}
+    <li class="active"><button on:click={() => changeViewingSheet($currentPlayerId)}>{$currentPlayerName} &#9734;</button></li>
+    {:else}
+    <li><button on:click={() => changeViewingSheet($currentPlayerId)}>{$currentPlayerName} &#9734;</button></li>
+    {/if}
     {#each $PartyStore as player}
-    <li>{player.name}</li>
+        {#if player.id === $viewingPlayerId}
+        <li role="tab" class="active"><button on:click={() => changeViewingSheet(player.id)}>{player.name}</button></li>
+        {:else}
+        <li role="tab"><button on:click={() => changeViewingSheet(player.id)}>{player.name}</button></li>
+        {/if}
     {/each}
 </ul>
 
@@ -18,10 +28,21 @@
         display:flex;
         list-style-type: none;
         li {
-            cursor:pointer;
-            padding: 0.5rem 1rem;
+            button {
+                background-color: transparent;
+                border:none;
+                border-radius: 0;
+                font-size: 1rem;
+                box-sizing: border-box;
+                display: block;
+                height: 100% !important;
+                width: 100%;
+                padding: 0.5rem 1rem;
+                color: inherit;
+                cursor:pointer;
+            }
             text-decoration: none;
-            color: rgba(var(--primary), 0.5);
+            color: rgba(var(--primary), 0.4);
             &:hover {
                 background: rgba(var(--secondary), 0.5);
                 color: rgba(var(--primary), 0.75);

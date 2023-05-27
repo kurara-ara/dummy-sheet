@@ -3,7 +3,7 @@
     import Section from "./Section.svelte";
 
     // Exports
-    export let sections;
+    export let sections =[];
 
     function removeSection(section){
         sections = sections.filter(s => s.id !== section.id)
