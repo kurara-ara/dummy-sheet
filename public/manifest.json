@@ -1,6 +1,6 @@
 {
     "name": "DummySheet",
-    "version": "0.7.1",
+    "version": "1.0.0",
     "manifest_version": 1,
     "icon": "/icon.svg",
     "author": "kurara ara",
@@ -10,7 +10,7 @@
       "title": "DummySheet",
       "icon": "/icon.svg",
       "popover": "/",
-      "height": 900,
+      "height": 1200,
       "width": 700
     }
   }

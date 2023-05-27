@@ -1,16 +1,41 @@
 <script lang="ts">
   // Import components
-  import  Themer  from './components/Themer.svelte'
+  import  Themer  from './components/Themer.svelte';
+  import { onMount } from "svelte";
+  import GmBinderTabs from './components/GMBinderTabs.svelte';
   import  Sheet  from './components/Sheet.svelte'
+  import OBR from "@owlbear-rodeo/sdk";
 
-  import { sheet } from './stores'
+  import { sheet } from './stores';
+  import { ViewingSheet, currentPlayerId, viewingPlayerId } from './services/OBRHelper';
+  import * as OBRHelper from './services/OBRHelper';
+
+
+  const { isGM } = OBRHelper;
+  $: mainSheetVisible = $currentPlayerId === $viewingPlayerId ? "display:block;" : "display:none;";
+  $: viewingSheetVisible = $currentPlayerId === $viewingPlayerId ? "display:none;" : "display:block";
+
+  onMount(() => {
+    if (OBR.isAvailable) {
+      OBRHelper.init();
+    }
+  });
 
 
 </script>
 
 <Themer>
   <main>
-    <Sheet bind:sheet={$sheet}/>
+    {#if $isGM}
+    <GmBinderTabs/>
+    {/if}
+    <div style="{mainSheetVisible}">
+      <Sheet bind:sheet={$sheet}/>
+    </div>
+    <div style="{viewingSheetVisible}">
+      <Sheet bind:sheet={$ViewingSheet}/>
+    </div>
+
   </main>
   <footer>
     <a target="_blank" href="https://github.com/kurara-ara/dummy-sheet">Github</a>

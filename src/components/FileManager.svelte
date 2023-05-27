@@ -10,8 +10,3 @@
     <FileImport/>
     <FileExport/>
 {/if}
-
-
-<style lang="scss">
-
-</style>

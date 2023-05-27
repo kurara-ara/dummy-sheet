@@ -18,6 +18,8 @@
         word-wrap: normal;
         overflow-y: scroll;
         max-height: 15rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--accent));
     }
     div {
         margin-bottom:2rem;
