@@ -1,5 +1,5 @@
 ---
-title: DummySheet-DEV
+title: DummySheet
 description: A dummy-simple character sheet for Owlbear Rodeo
 author: kurara ara
 image: https://www.dummysheet.com/hero.png
