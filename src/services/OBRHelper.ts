@@ -4,13 +4,27 @@ import { sheet } from '../stores'
 
 import { writable, get } from "svelte/store";
 
+let initViewingSheet:any = {
+  id: 0,
+  name: "",
+  notes: "",
+  sections: [
+    {
+      id:0,
+      name: "",
+      stats: [
+        {id: 0, name: "", value: ""}
+      ]
+    }
+  ]
+};
+
 export const isGM = writable(false);
 export const PartyStore = writable<Player[]>([]);
-export const trackedPlayer = writable<string>("");
 export const currentPlayerName = writable<string>("");
 export const currentPlayerId = writable<string>("");
 export const viewingPlayerId = writable<string>("");
-export const ViewingSheet = writable({});
+export const ViewingSheet = writable(initViewingSheet);
 
 
 export async function init() {
@@ -39,11 +53,8 @@ async function initGM() {
   });
 
   PartyStore.subscribe((party) => {
-    console.log(party);
     const vId = get(viewingPlayerId);
-    const partyData = {};
     for (const p of party){
-      partyData[p.id] = p.metadata["dummysheet"];
       if (p.id === vId) {
         ViewingSheet.set(p.metadata.dummysheet)
       }
@@ -57,7 +68,8 @@ async function initGM() {
     if (vId === cId){
       ViewingSheet.set(s);
     } else {
-      ViewingSheet.set(ps.find(x => x.id === vId).metadata.dummysheet);
+      const vs = ps.find(x => x.id === vId).metadata.dummysheet;
+      ViewingSheet.set(vs);
     }
   });
   

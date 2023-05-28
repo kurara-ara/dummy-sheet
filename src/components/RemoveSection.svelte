@@ -1,5 +1,9 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte'
+    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
+    import { editing } from '../stores';
+
+    $: editable = $currentPlayerId === $viewingPlayerId; 
     const dispatch = createEventDispatcher();
 
     export let section;
@@ -10,9 +14,11 @@
 
 </script>
 
+{#if editable && $editing}
 <button on:click={onRemoveSection}>
     Remove Section
 </button>
+{/if}
 
 <style lang="scss">
     button {

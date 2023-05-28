@@ -1,5 +1,9 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte'
+    import { editing } from '../stores';
+    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
+
+    $: editable = $currentPlayerId === $viewingPlayerId; 
     const dispatch = createEventDispatcher();
 
     function onAddStat() {
@@ -8,9 +12,11 @@
 
 </script>
 
+{#if editable && $editing}
 <button on:click={onAddStat}>
     Add Stat
 </button>
+{/if}
 
 <style lang="scss">
     button {

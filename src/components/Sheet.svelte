@@ -3,13 +3,17 @@
     import Sections from './Sections.svelte'
     import SheetActions from './SheetActions.svelte';
     import Notes from './Notes.svelte';
-    let player = "";
+    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
+    import type { DummySheet } from '../types/sheet.type';
 
     // Import stores
     import { editing } from '../stores'
     
+    $: editable = $currentPlayerId === $viewingPlayerId; 
+    let player = "";
+
     // Exports
-    export let sheet;
+    export let sheet:DummySheet;
     
     function toggleEditing(){ 
       $editing = !$editing;
@@ -22,7 +26,7 @@
 </script>
 
 <div>
-    {#if $editing}
+    {#if editable && $editing}
     <h1 bind:innerText={sheet.name} contenteditable="true"> </h1>
     {:else}
     <h1>{sheet.name}</h1>
