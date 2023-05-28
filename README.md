@@ -10,4 +10,5 @@ If you're constantly changing systems, and you don't have time to wait for a nic
 - You can also change the theme by clicking on the colour boxes, if you want something cheerier.
 - `EXPORT` your character to a convenient JSON file...
 - ... and you can `IMPORT` it back again.
+- The GM can view other players' sheets by looking through the tabs at the top.
 - Have a fun time.
