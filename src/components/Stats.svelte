@@ -1,12 +1,13 @@
 <script lang="ts">
     // Import stores
-    import { editing } from "../stores";
+    import { editing } from "../stores";    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
 
     // Import components
     import RemoveStat from "./RemoveStat.svelte";
     import AddStat from "./AddStat.svelte"
 
     $: newStatId = stats.length > 0 ? Math.max(...stats.map(t => t.id)) + 1 : 1
+    $: editable = $currentPlayerId === $viewingPlayerId; 
 
     function addStat(){
         stats = [...stats,
@@ -29,14 +30,19 @@
 <table>
     {#each stats as stat (stat.id)}
     <tr>
-        {#if $editing}
+        {#if editable && $editing}
         <td contenteditable="true" bind:innerText={stat.name}></td>
         {:else}
         <td>{stat.name}</td>
         {/if}
+        {#if editable}
         <td contenteditable="true" bind:innerText={stat.value}></td>
+        {:else}
+        <td>{stat.value}</td>
+        {/if}
+        
 
-        {#if $editing}
+        {#if editable && $editing}
         <td style="width:0.5rem;"><RemoveStat bind:stat={stat} on:removeStat={e => removeStat(e.detail)}/></td>
         {/if}
     </tr>

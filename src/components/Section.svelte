@@ -6,21 +6,24 @@
 
     // Import Stores
     import { editing } from '../stores';
+    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
 
     // Export
     export let section;
 
+    $: editable = $currentPlayerId === $viewingPlayerId; 
+
 </script>
 
 <div>
-    {#if $editing}
+    {#if editable && $editing}
 
     <h2 bind:innerText={section.name} contenteditable="true">{section.name}</h2>
     {:else}
     <h2>{section.name}</h2>
     {/if}
     <Stats bind:stats={section.stats}/>
-    {#if $editing}
+    {#if editable && $editing}
     <RemoveSection bind:section={section} on:removeSection/>
     {/if}
 </div>

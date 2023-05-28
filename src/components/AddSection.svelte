@@ -1,5 +1,8 @@
 <script lang="ts">
     import { editing } from "../stores";
+    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
+
+    $: editable = $currentPlayerId === $viewingPlayerId; 
     
     $: newSectionId = sections.length > 0 ? Math.max(...sections.map(t => t.id)) + 1 : 1
 
@@ -21,8 +24,7 @@
     export let sections;
 </script>
 
-{#if $editing}
-
+{#if editable && $editing}
 <button on:click={addSection} on:keydown={addSection}>
  Add Section
 </button>

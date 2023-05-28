@@ -1,11 +1,20 @@
 <script lang="ts">
+    import { currentPlayerId, viewingPlayerId } from "../services/OBRHelper";
+
 
     export let notes;
+
+    $: editable = $currentPlayerId === $viewingPlayerId; 
+
 </script>
 
 <div>
     <h2>Notes</h2>
+    {#if editable}
     <pre bind:innerText={notes} contenteditable="true"></pre>
+    {:else}
+    <pre>{notes}</pre>
+    {/if}
 </div>
 
 <style>
